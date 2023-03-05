@@ -21,4 +21,4 @@ jobs:
         if: success()
         with:
           name: Guole
-          path: build/libs/
+          path: build/libs/guole-paperclip-1.19.3-R0.1-SNAPSHOT-reobf.jar
