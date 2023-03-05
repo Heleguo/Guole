@@ -16,3 +16,9 @@ jobs:
         run: ./gradlew applyPatches --stacktrace
       - name: Build
         run: ./gradlew build --stacktrace
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        if: success()
+        with:
+          name: Guole
+          path: ./*
