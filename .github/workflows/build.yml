@@ -21,4 +21,4 @@ jobs:
         if: success()
         with:
           name: Guole
-          path: build/libs/
+          path: build/libs/*
