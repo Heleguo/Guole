@@ -13,9 +13,9 @@ jobs:
       - name: Configure Git
         run: git config --global user.email "no-reply@github.com" && git config --global user.name "Github Actions"
       - name: Apply patches
-        run: ./gradlew applyPatches --stacktrace
+        run: ./gradlew -Dorg.gradle.jvmargs="-Dfile.encoding=UTF-8 -Dgraal.CompilerConfiguration=community -Dgraal.UsePriorityInlining=true -Dgraal.Vectorization=true -Dgraal.OptDuplication=true -Dgraal.SpeculativeGuardMovement=true -Dgraal.WriteableCodeCache=true --add-modules jdk.incubator.vector"  applyPatches --stacktrace
       - name: Build
-        run: ./gradlew build --stacktrace
+        run: ./gradlew -Dorg.gradle.jvmargs="-Dfile.encoding=UTF-8 -Dgraal.CompilerConfiguration=community -Dgraal.UsePriorityInlining=true -Dgraal.Vectorization=true -Dgraal.OptDuplication=true -Dgraal.SpeculativeGuardMovement=true -Dgraal.WriteableCodeCache=true --add-modules jdk.incubator.vector"  build --stacktrace
       - name: Archive artifacts
         uses: actions/upload-artifact@v2
         if: success()
